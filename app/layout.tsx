@@ -1,4 +1,4 @@
-import type { Metadata } from "next"
+import type { Metadata, Viewport } from "next"
 import { Inter, JetBrains_Mono } from "next/font/google"
 import "./globals.css"
 
@@ -17,6 +17,30 @@ export const metadata: Metadata = {
     title: "SRM Sarthi | Commute Companion for SRMIST Day Scholars",
     description: "Live local train schedules, bus tracking, and route planning for SRMIST day scholars.",
   },
+  icons: {
+    icon: [
+      { url: "/sarthi-icon.svg", type: "image/svg+xml" },
+    ],
+    apple: [
+      { url: "/sarthi-icon.svg" },
+    ],
+  },
+  manifest: "/manifest.json",
+  appleWebApp: {
+    capable: true,
+    title: "SRM Sarthi",
+    statusBarStyle: "black-translucent",
+  },
+  other: {
+    "mobile-web-app-capable": "yes",
+  },
+}
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+  themeColor: "#0a0f1a",
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

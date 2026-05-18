@@ -41,9 +41,6 @@
       ],
       [
         "expo-router"
-      ],
-      [
-        "react-native-reanimated"
       ]
     ],
     "scheme": "srmsarthi",

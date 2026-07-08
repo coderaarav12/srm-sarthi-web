@@ -12,6 +12,8 @@ Built with Next.js, statically exported — no server runtime needed.
 - **SRM bus routes** — all 47 student & staff shuttle routes with stops, timings, and transport contact info
 - **Interactive campus map** — Leaflet map with 35+ geolocated buildings, search, distance calculation, and directions
 
+> **Note:** This project uses Next.js 16 which has breaking changes from earlier versions. APIs, conventions, and file structure may differ. Check deprecation notices in `node_modules/next/dist/docs/` before modifying code.
+
 ## Tech Stack
 
 - Next.js 16 (App Router, static export)

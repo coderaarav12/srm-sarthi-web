@@ -50,4 +50,10 @@ Static output is written to `out/`.
 
 Deployed at [srm-sarthi-web.vercel.app](https://srm-sarthi-web.vercel.app).
 
-For Cloudflare deployment, see [`CLOUDFLARE_DEPLOY.md`](./CLOUDFLARE_DEPLOY.md) (requires `@opennextjs/cloudflare`).
+### Cloudflare
+
+```bash
+npm install -D @opennextjs/cloudflare wrangler
+npm run build:opennext
+npx wrangler deploy
+```

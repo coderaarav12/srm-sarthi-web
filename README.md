@@ -1,36 +1,51 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# SRM Sarthi
 
-## Getting Started
+A commute companion for SRMIST day scholars in Chennai/Kattankulathur.
 
-First, run the development server:
+Built with Next.js, statically exported — no server runtime needed.
+
+## Features
+
+- **Live train schedules** — Potheri (POTI) station board with real-time arrivals/departures and 30s auto-refresh
+- **Train search & route planning** — find trains between any two Chennai Suburban stations
+- **Train tracking** — running status with live position and station-wise timeline
+- **SRM bus routes** — all 47 student & staff shuttle routes with stops, timings, and transport contact info
+- **Interactive campus map** — Leaflet map with 35+ geolocated buildings, search, distance calculation, and directions
+
+## Tech Stack
+
+- Next.js 16 (App Router, static export)
+- React 19, TypeScript
+- Tailwind CSS v4, Framer Motion
+- Leaflet + React-Leaflet (campus map)
+- Radix UI (ScrollArea, Select, Tabs)
+- Lucide icons, Sonner toasts
+
+## Data Sources
+
+- Train schedules: static JSON datasets committed in `lib/`
+- Live train data: external API endpoints (`/api/trains/*`, `/api/track/*`)
+- Bus routes: hardcoded in `components/bus-section.tsx`
+- Campus buildings: hardcoded in `components/campus-map.tsx`
+- User profiles: `localStorage`
+
+## Development
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Build
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run build
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Static output is written to `out/`.
 
-## Learn More
+## Deployment
 
-To learn more about Next.js, take a look at the following resources:
+Deployed at [srm-sarthi-web.vercel.app](https://srm-sarthi-web.vercel.app).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+For Cloudflare deployment, see [`CLOUDFLARE_DEPLOY.md`](./CLOUDFLARE_DEPLOY.md) (requires `@opennextjs/cloudflare`).
